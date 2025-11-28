@@ -2,17 +2,25 @@ package com.alpha.hospital.entity;
 
 import java.util.List;
 
+import org.hibernate.validator.constraints.Length;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.Positive;
 
 @Entity
 public class Doctor {
      @Id
 	private int id;
+    @Length(max = 10,min = 4)
 	private String name;
+//    @Positive
+//    private int age;
 	private String specialization;
-	
-	List<Patient> plist;
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Patient> plist;
 
 	public int getId() {
 		return id;
@@ -29,6 +37,14 @@ public class Doctor {
 	public void setName(String name) {
 		this.name = name;
 	}
+//	public int getAge() {
+//		return age;
+//	}
+//
+//	public void setAge(int age) {
+//		this.age = age;
+//	}
+
 
 	public String getSpecialization() {
 		return specialization;
