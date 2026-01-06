@@ -17,7 +17,7 @@ import com.alpha.hospital.service.DoctorService;
 
 import jakarta.validation.Valid;
 
-@RestController
+@RestController  
 public class DoctorController {
 	@Autowired
 	DoctorService ds;
@@ -43,7 +43,7 @@ public class DoctorController {
     	return ds.deleteDoctorById(id);
     }
     
-    @GetMapping("/fetchalldoctors")
+    @GetMapping("/fetchallDoctors")
     public List<Doctor> fetchAllDoctor() {
     	return ds.fetchAllDoctor();
     }

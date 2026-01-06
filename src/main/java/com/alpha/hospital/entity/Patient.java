@@ -30,6 +30,12 @@ public class Patient {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public void setbdgroup(String name1) {
+		this.name1 = name1;
+	}
+	public void setBP(String name2) {
+		this.name2=name2;
+	}
 //	public int getAge() {
 //		return age;
 //	}
@@ -48,11 +54,12 @@ public class Patient {
 	public void setDisease(String disease) {
 		this.disease = disease;
 	}
-	public Patient(int id, String name, String disease) {
+	public Patient(int id, String name, String disease,String name1) {
 		super();
 		this.id = id;
-		this.name = name;
+		this.name = name1;
 		this.disease = disease;
+		this.disease = bdgroup;
 	}
 	public Patient() {
 		super();
